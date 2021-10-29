@@ -6,11 +6,9 @@ import router from './router'
 import store from './store'
 import './style/index.less'
 import mixin from './mixin'
-import * as echarts from 'echarts';
 
 Vue.config.productionTip = false;
 Vue.mixin(mixin);
-Vue.prototype.$echarts = echarts;
 
 new Vue({
   router,

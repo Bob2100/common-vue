@@ -1,5 +1,5 @@
 import forecast from '../../api/forecast';
-import utils from '../../utils/utils';
+import utils from '../../utils/index';
 export default {
   namespaced: true,
   state: {

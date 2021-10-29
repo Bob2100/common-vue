@@ -14,7 +14,6 @@
 
 <script>
   import BaseChart from "./BaseChart.vue";
-  import tools from '../../utils/tools';
 
   export default {
     name: "BasePieChart",

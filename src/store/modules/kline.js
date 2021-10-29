@@ -1,5 +1,5 @@
 import kline from '../../api/kline';
-import utils from '../../utils/utils';
+import utils from '../../utils/index';
 import Vue from 'vue';
 const $confirm = Vue.prototype.$confirm;
 const $message = Vue.prototype.$message;

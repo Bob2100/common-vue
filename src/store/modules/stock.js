@@ -1,5 +1,5 @@
 import stock from '../../api/stock';
-import utils, { $confirm, $message } from '../../utils/utils';
+import utils, { $confirm, $message } from '../../utils/index';
 export default {
   namespaced: true,
   state: {

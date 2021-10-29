@@ -1,5 +1,5 @@
 import balance from '../../api/balance';
-import utils from '../../utils/utils';
+import utils from '../../utils/array';
 export default {
   namespaced: true,
   state: {

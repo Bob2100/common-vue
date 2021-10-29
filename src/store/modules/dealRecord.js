@@ -1,5 +1,5 @@
 import dealRecord from '../../api/dealRecord';
-import { $confirm, $message } from '../../utils/utils';
+import { $confirm, $message } from '../../utils/index';
 
 export default {
   namespaced: true,

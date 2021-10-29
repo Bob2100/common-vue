@@ -12,8 +12,6 @@
 
 <script>
   import BaseChart from './BaseChart.vue'
-  import tools from '../../utils/tools';
-  import echarts from 'echarts'
 
   export default{
     name: 'BaseBarChart',
