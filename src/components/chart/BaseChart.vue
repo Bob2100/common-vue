@@ -26,6 +26,7 @@ export default {
     ChartTip,
   },
   props: {
+    radar: Object,
     title: {
       type: String,
       default: "标题",
@@ -111,6 +112,9 @@ export default {
       window.removeEventListener('resize', LISTENER_HOOKS.resize);
     },
     wrapXaxis() {
+      if (!this.xAxis) {
+        return;
+      }
       this.xAxis.type = this.xAxis.type || "category";
       this.xAxis.axisLabel = this.xAxis.axisLabel || {
         interval: 0,
@@ -151,6 +155,7 @@ export default {
         yAxis: this.yAxis,
         series: this.series,
         dataZoom: this.dataZoom,
+        radar: this.radar || null
       };
     },
   },
