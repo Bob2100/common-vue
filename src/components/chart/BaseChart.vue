@@ -73,7 +73,7 @@ export default {
         yAxis: this.yAxis,
         series: this.series,
         dataZoom: this.dataZoom,
-        radar: this.radar || null
+        radar: this.radar
       };
     },
   },
