@@ -80,10 +80,6 @@ export default {
       chart.on("click", (params) => this.$emit("click-event", params));
     },
     setOption() {
-      this.series.forEach((serie) => {
-        serie.type = serie.type || "line";
-        serie.vConfig = serie.vConfig || vConfig;
-      });
       chart.setOption(this.getOption());
     },
     getOption() {

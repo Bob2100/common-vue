@@ -43,6 +43,9 @@ export default {
         return `${param.percent}%`;
       }
       const value = param.data;
+      if (!param.vConfig) {
+        return value;
+      }
       return `${numUtils.formatNum(value, { unit: param.vConfig.unit })}${param.vConfig.unitLabel || ''}`;
     }
   },
