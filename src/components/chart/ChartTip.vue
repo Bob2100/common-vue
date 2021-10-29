@@ -43,11 +43,7 @@ export default {
         return `${param.percent}%`;
       }
       const value = param.data;
-      if (param.vConfig.isPercent) {
-        return `${numUtils.formatNum(value, { unit: -2 })}`;
-      } else {
-        return numUtils.formatNum(value, { unit: 8 });
-      }
+      return `${numUtils.formatNum(value, { unit: param.vConfig.unit })}${param.vConfig.unitLabel || ''}`;
     }
   },
 };
