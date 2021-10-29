@@ -30,7 +30,7 @@ export default {
     title: String,
     tooltip: Object,
     xAxis: Object,
-    yAxis: Array,
+    yAxis: [Array, Object],
     series: Array,
     legend: Object,
     dataZoom: Array
