@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import numUtils from "../../utils/number";
+import numUtils from "./utils/number";
 export default {
   name: "ChartTip",
   props: {

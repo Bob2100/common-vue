@@ -9,7 +9,7 @@
 
 <script>
 import { debounce } from "throttle-debounce";
-import config, { vConfig } from './config'
+import { vConfig } from './config'
 import echarts from 'echarts'
 import ChartTip from "./ChartTip.vue";
 
@@ -27,49 +27,19 @@ export default {
   },
   props: {
     radar: Object,
-    title: {
-      type: String,
-      default: "标题",
-    },
-    tooltip: {
-      type: Object,
-      default() {
-        return config.defaultTooltip;
-      },
-    },
-    xAxis: {
-      type: Object,
-      default() {
-        return config.defaultXaxis;
-      }
-    },
-    yAxis: {
-      type: Array,
-      default() {
-        return config.defaultYaxis;
-      },
-    },
-    series: {
-      type: Array,
-      default() {
-        return config.defaultSeries;
-      },
-    },
-    legend: {
-      type: Object,
-      default() {
-        return {
-          data: this.series.map((serie) => serie.name),
-        };
-      },
-    },
+    title: String,
+    tooltip: Object,
+    xAxis: Object,
+    yAxis: Array,
+    series: Array,
+    legend: Object,
     dataZoom: Array
   },
   data() {
     return {
       tipParams: [
         {
-          vConfig,
+          vConfig
         },
       ]
     };
@@ -80,13 +50,7 @@ export default {
         this.setOption();
       },
       deep: true
-    },
-    xAxis() {
-      this.wrapXaxis();
     }
-  },
-  created() {
-    this.wrapXaxis();
   },
   mounted() {
     this.initChart();
@@ -110,19 +74,6 @@ export default {
     },
     removeEventListener() {
       window.removeEventListener('resize', LISTENER_HOOKS.resize);
-    },
-    wrapXaxis() {
-      if (!this.xAxis) {
-        return;
-      }
-      this.xAxis.type = this.xAxis.type || "category";
-      this.xAxis.axisLabel = this.xAxis.axisLabel || {
-        interval: 0,
-        rotate: 30,
-      };
-      this.xAxis.axisPointer = this.xAxis.axisPointer || {
-        type: "shadow",
-      };
     },
     initChart() {
       chart = echarts.init(this.$refs.chart);

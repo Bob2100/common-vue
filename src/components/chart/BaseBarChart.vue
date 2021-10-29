@@ -1,100 +1,62 @@
 <template>
-  <BaseChart
-    class="BaseBarChart"
-    :title="title"
-    :xAxis="xAxis"
-    :yAxis="yAxis"
-    :series="series"
-    :tooltip="tooltip"
-    :dataZoom="dataZoom"
-  />
+  <BaseChart class="BaseBarChart" :title="title" :xAxis="xAxis" :yAxis="yAxis"
+    :series="series" :tooltip="tooltip" :dataZoom="dataZoom" />
 </template>
 
 <script>
-  import BaseChart from './BaseChart.vue'
+import BaseChart from './BaseChart.vue'
 
-  export default{
-    name: 'BaseBarChart',
-    components: {
-      BaseChart
+export default {
+  name: 'BaseBarChart',
+  components: {
+    BaseChart
+  },
+  props: {
+    title: String,
+    tooltip: Object,
+    xAxis: Object,
+    yAxis: Array,
+    series: Array,
+    dataZoom: Array
+  },
+  watch: {
+    xAxis() {
+      this.wrapXaxis();
     },
-    props: {
-      title: String,
-      tooltip: {
-        type: Object,
-        default() {
-            return {};
-            },
-        },
-      xAxis: {
-        type: Object,
-        default() {
-          return {
-            data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
-          }
-        },
-      },
-      yAxis: {
-        type: Array,
-        default() {
-          return [
-            {
-              name: "比率 / %",
-            },
-            {
-              name: "数量 / 亿",
-            },
-          ];
-        },
-      },
-      series: {
-          type: Array,
-          default(){
-              return [
-                  {
-                      name: "A",
-                      data: [22, 182, 191, 234, 29, 33, 31]
-                  },
-              ];
-          }
-      },
-      dataZoom:{
-          type: Array,
-          default() {
-              return [];
-          },
-      }
+    yAxis() {
+      this.wrapYaxis();
     },
-    watch: {
-      yAxis(){
-        this.wrapYaxis();
-      },
-      series() {
-        this.wrapSeries();
-      },
-    },
-    created() {
-        this.wrapYaxis();
+    series() {
       this.wrapSeries();
     },
-    methods: {
-      wrapYaxis(){
-        this.yAxis.forEach(item => {
-          item.type = item.type || "value";
-        });
-      },
-      wrapSeries(){
-        this.series.forEach((item) => {
-          item.type = "bar";
-          item.yAxisIndex = item.yAxisIndex || 0;
-          item.vConfig = item.vConfig || {
-              isPercent: false
-            }
-        });
-      }
+  },
+  created() {
+    this.wrapXaxis();
+    this.wrapYaxis();
+    this.wrapSeries();
+  },
+  methods: {
+    wrapXaxis() {
+      this.xAxis.type = this.xAxis.type || "category";
+      this.xAxis.axisLabel = this.xAxis.axisLabel || {
+        interval: 0,
+        rotate: 30,
+      };
+      this.xAxis.axisPointer = this.xAxis.axisPointer || {
+        type: "shadow",
+      };
+    },
+    wrapYaxis() {
+      this.yAxis.forEach(item => {
+        item.type = item.type || "value";
+      });
+    },
+    wrapSeries() {
+      this.series.forEach((item) => {
+        item.type = "bar";
+        item.yAxisIndex = item.yAxisIndex || 0;
+      });
     }
   }
+}
 </script>
-<style scoped lang="less">
-
-</style>
