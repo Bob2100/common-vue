@@ -1,15 +1,15 @@
 <template>
   <div class="Layout">
-    <BaseBarChart />
+    <BaseChart />
   </div>
 </template>
 
 <script>
-import BaseBarChart from '../components/chart/BaseBarChart.vue'
+import BaseChart from '../components/chart/BaseChart.vue'
 export default {
   name: 'Layout',
   components: {
-    BaseBarChart
+    BaseChart
   }
 }
 </script>

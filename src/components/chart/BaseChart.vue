@@ -101,7 +101,6 @@ export default {
       params.forEach((param) => {
         param.vConfig = this.series[param.seriesIndex].vConfig;
       });
-      console.log(params)
       this.tipParams = params;
       return this.$refs.chartTip.$el.innerHTML;
     },
