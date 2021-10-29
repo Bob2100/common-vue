@@ -1,17 +1,10 @@
 <template>
-  <div class="BaseChart">
-    <div ref="chart" class="chart"></div>
-    <div v-show="false">
-      <ChartTip ref="chartTip" :params="tipParams" />
-    </div>
-  </div>
+  <div ref="chart" class="chart"></div>
 </template>
 
 <script>
 import { debounce } from "throttle-debounce";
-import { vConfig } from './config/index'
 import echarts from 'echarts'
-import ChartTip from "./ChartTip.vue";
 
 let chart = null;
 const LISTENER_HOOKS = {
@@ -22,9 +15,6 @@ const LISTENER_HOOKS = {
 
 export default {
   name: "BaseChart",
-  components: {
-    ChartTip,
-  },
   props: {
     radar: Object,
     title: String,
@@ -34,15 +24,6 @@ export default {
     series: Array,
     legend: Object,
     dataZoom: Array
-  },
-  data() {
-    return {
-      tipParams: [
-        {
-          vConfig
-        },
-      ]
-    };
   },
   watch: {
     series: {
@@ -62,18 +43,6 @@ export default {
     this.removeEventListener();
   },
   methods: {
-    tooltipFormatter(params) {
-      if (Array.isArray(params)) {
-        params.forEach((param) => {
-          param.vConfig = this.series[param.seriesIndex].vConfig;
-        });
-        this.tipParams = params;
-      } else {
-        params.vConfig = this.series[params.seriesIndex].vConfig;
-        this.tipParams = [params];
-      }
-      return this.$refs.chartTip.$el.innerHTML;
-    },
     addEventListener() {
       window.addEventListener("resize", LISTENER_HOOKS.resize);
     },
@@ -92,10 +61,7 @@ export default {
         title: {
           text: this.title
         },
-        tooltip: {
-          ...this.tooltip,
-          formatter: this.tooltipFormatter
-        },
+        tooltip: this.tooltip,
         legend: this.legend,
         grid: {
           left: "3%",
@@ -115,13 +81,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.BaseChart {
-  width: 100%;
-  height: 380px;
-}
-
 .chart {
-  height: 100%;
+  height: 380px;
   width: 100%;
   min-height: 50px;
   min-width: 50px;
