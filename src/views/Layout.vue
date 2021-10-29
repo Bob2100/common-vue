@@ -1,15 +1,18 @@
 <template>
   <div class="Layout">
-    <HelloBaseBarChart />
+    <BaseBarChartDemo />
+    <RadarChartDemo />
   </div>
 </template>
 
 <script>
-import HelloBaseBarChart from './chartDemo/BaseBarChartDemo.vue'
+import BaseBarChartDemo from './chartDemo/BaseBarChartDemo.vue'
+import RadarChartDemo from './chartDemo/RadarChartDemo.vue'
 export default {
   name: 'Layout',
   components: {
-    HelloBaseBarChart
+    BaseBarChartDemo,
+    RadarChartDemo
   }
 }
 </script>
