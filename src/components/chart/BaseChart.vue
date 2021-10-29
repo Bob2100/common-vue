@@ -1,5 +1,5 @@
 <template>
-  <div ref="chart" class="chart"></div>
+  <div ref="chart" class="BaseChart"></div>
 </template>
 
 <script>
@@ -81,7 +81,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.chart {
+.BaseChart {
   height: 380px;
   width: 100%;
   min-height: 50px;
