@@ -23,13 +23,28 @@ export default {
       }
     },
     series() {
-      return [{
-        data: [120, 200, 150, 80, 70, 110, 130],
-        showBackground: true,
-        backgroundStyle: {
-          color: 'rgba(220, 220, 220, 0.8)'
+      return [
+        {
+          name: 'a',
+          data: [120, 200, 150, 80, 70, 110, 130],
+          showBackground: true,
+          backgroundStyle: {
+            color: 'rgba(220, 220, 220, 0.8)'
+          },
+          vConfig: {
+            unit: 2,
+            unitLabel: '百'
+          }
+        },
+        {
+          name: 'b',
+          data: [120, 200, 150, 80, 70, 110, 130],
+          showBackground: true,
+          backgroundStyle: {
+            color: 'rgba(220, 220, 220, 0.8)'
+          }
         }
-      }];
+      ];
     }
   }
 }

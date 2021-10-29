@@ -63,10 +63,15 @@ export default {
   },
   methods: {
     tooltipFormatter(params) {
-      params.forEach((param) => {
-        param.vConfig = this.series[param.seriesIndex].vConfig;
-      });
-      this.tipParams = params;
+      if (Array.isArray(params)) {
+        params.forEach((param) => {
+          param.vConfig = this.series[param.seriesIndex].vConfig;
+        });
+        this.tipParams = params;
+      } else {
+        params.vConfig = this.series[params.seriesIndex].vConfig;
+        this.tipParams = [params];
+      }
       return this.$refs.chartTip.$el.innerHTML;
     },
     addEventListener() {
