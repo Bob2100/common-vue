@@ -37,6 +37,9 @@ export default {
   },
   methods: {
     wrapXaxis() {
+      if (!this.xAxis) {
+        return;
+      }
       this.xAxis.type = this.xAxis.type || "category";
       this.xAxis.axisLabel = this.xAxis.axisLabel || {
         interval: 0,
@@ -47,11 +50,17 @@ export default {
       };
     },
     wrapYaxis() {
+      if (!this.yAxis) {
+        return;
+      }
       this.yAxis.forEach(item => {
         item.type = item.type || "value";
       });
     },
     wrapSeries() {
+      if (!this.series) {
+        return;
+      }
       this.series.forEach((item) => {
         item.type = "bar";
         item.yAxisIndex = item.yAxisIndex || 0;
