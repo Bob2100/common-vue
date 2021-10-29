@@ -1,0 +1,1 @@
+window.PATH_PARAM_SUM = 'sum'
