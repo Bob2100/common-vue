@@ -1,4 +1,5 @@
-import numUtils from "../../utils/number";
+import utils from "./utils";
+const { number: numUtils } = utils;
 
 const defaultYaxisLeft = {
   type: "value",
