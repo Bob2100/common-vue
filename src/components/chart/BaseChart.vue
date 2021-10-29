@@ -9,7 +9,7 @@
 
 <script>
 import { debounce } from "throttle-debounce";
-import { vConfig } from './config'
+import { vConfig } from './config/index'
 import echarts from 'echarts'
 import ChartTip from "./ChartTip.vue";
 
