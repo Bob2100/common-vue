@@ -1,5 +1,5 @@
 <template>
-  <RadarChart :title="RadarChartDemo" :series="series" :radar="radar" />
+  <RadarChart title="RadarChartDemo" :series="series" :radar="radar" />
 </template>
 
 <script>
