@@ -1,7 +1,7 @@
 <template>
   <div>
     <BaseChart class="BaseBarChart" :title="title" :xAxis="xAxis" :yAxis="yAxis"
-      :series="series" :tooltip="{tooltip}" :dataZoom="dataZoom" />
+      :series="series" :tooltip="wrapperTooltip" :dataZoom="dataZoom" />
     <div v-show="false">
       <ChartTip ref="chartTip" :params="tipParams" />
     </div>
