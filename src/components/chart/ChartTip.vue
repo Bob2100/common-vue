@@ -2,9 +2,11 @@
   <div>
     <div class="title">{{title}}</div>
     <template v-for="param in params">
-      <div :key="getLabel(param)" style="margin: 10px 0 0">
-        <span class="icon" :style="{'background-color':param.color}"></span>
-        <span class="label">{{getLabel(param)}}</span>
+      <div :key="getLabel(param)" class="line-serie">
+        <span>
+          <span class="icon" :style="{'background-color':param.color}"></span>
+          <span class="label">{{getLabel(param)}}</span>
+        </span>
         <span class="value">{{getValue(param)}}</span>
       </div>
     </template>
@@ -12,11 +14,11 @@
 </template>
 
 <script>
-import utils from "../utils/utils";
+import numUtils from "../../utils/number";
 export default {
   name: "ChartTip",
   props: {
-    params: [],
+    params: Array,
   },
   computed: {
     isPie() {
@@ -42,23 +44,26 @@ export default {
       }
       const value = param.data;
       if (param.vConfig.isPercent) {
-        return `${this.formatAmount(value, -2)}%`;
+        return `${numUtils.formatNum(value, { unit: -2 })}`;
       } else {
-        return this.formatAmount(value, 8);
+        return numUtils.formatNum(value, { unit: 8 });
       }
-    },
-    formatAmount(amount, unit, point) {
-      return utils.formatAmount(amount, unit, point);
-    },
+    }
   },
 };
 </script>
 
 <style lang="less" scoped>
+.line-serie {
+  margin: 10px 0 0;
+  display: flex;
+  justify-content: space-between;
+}
 .title {
+  text-align: left;
   font-family: monospace;
   font-size: 14px;
-  color: #666;
+  color: #fff;
   font-weight: 400;
   line-height: 1;
 }
@@ -71,15 +76,13 @@ export default {
 }
 .label {
   font-size: 14px;
-  color: #666;
+  color: #fff;
   font-weight: 400;
-  margin-left: 2px;
 }
 .value {
-  float: right;
   margin-left: 20px;
   font-size: 14px;
-  color: #666;
+  color: #fff;
   font-weight: 900;
   font-family: monospace;
 }
