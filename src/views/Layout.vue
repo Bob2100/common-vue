@@ -1,21 +1,20 @@
 <template>
   <div class="Layout">
-    <BaseBarChartDemo />
-    <RadarChartDemo />
+    <DemoLineChart />
   </div>
 </template>
 
 <script>
-import BaseBarChartDemo from './chartDemo/BaseBarChartDemo.vue'
-import RadarChartDemo from './chartDemo/RadarChartDemo.vue'
+import DemoLineChart from './chartDemo/DemoLineChart.vue'
 export default {
   name: 'Layout',
   components: {
-    BaseBarChartDemo,
-    RadarChartDemo
+    DemoLineChart,
   }
 }
 </script>
-
-<style lang="less" scoped>
+<style scoped lang="less">
+.Layout {
+  padding: 5px;
+}
 </style>
