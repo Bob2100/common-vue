@@ -6,11 +6,17 @@
     <ChartTrend title-text="ROE" :x-data="xData" :y-data="yData.roe" />
     <ChartTrend title-text="总资产周转率" :x-data="xData"
       :y-data="yData.turnOverRatio" />
+    <div class="chart-panel">
+      <img :src="erniuIcon">
+      <h4>欢迎扫码关注二牛的公众号 ：）</h4>
+      <a href="https://github.com/Bob2100/common-vue" target="_blank">本站源码</a>
+    </div>
   </div>
 </template>
 
 <script>
 import ChartTrend from './common/ChartTrend.vue';
+import erniuIcon from '../../assets/erniu.jpeg';
 
 export default {
   name: 'DemoLineChart',
@@ -23,6 +29,9 @@ export default {
     }
   },
   computed: {
+    erniuIcon() {
+      return erniuIcon;
+    },
     xData() {
       return ['2018', '2019', '2020'];
     },
