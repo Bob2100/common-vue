@@ -1,6 +1,6 @@
 <template>
   <BaseChart class="RadarChart" :title="title" :series="series" :radar="radar"
-    :tooltip="tooltip" />
+    :tooltip="tooltip" :legend="legend" :color="color" />
 </template>
 
 <script>
@@ -12,9 +12,11 @@ export default {
   },
   props: {
     tooltip: Object,
-    title: String,
+    title: Object,
     radar: Object,
-    series: Array
+    series: Array,
+    legend: Object,
+    color: Array
   },
   watch: {
     series() {

@@ -6,24 +6,29 @@
 import { debounce } from "throttle-debounce";
 import echarts from 'echarts'
 
-let chart = null;
-const LISTENER_HOOKS = {
-  resize: debounce(400, false, () => {
-    chart && chart.resize();
-  })
-};
-
 export default {
   name: "BaseChart",
   props: {
     radar: Object,
-    title: String,
+    title: Object,
     tooltip: Object,
     xAxis: Object,
     yAxis: [Array, Object],
     series: Array,
     legend: Object,
-    dataZoom: Array
+    dataZoom: Array,
+    grid: Object,
+    color: Array
+  },
+  data() {
+    return {
+      chart: null,
+      LISTENER_HOOKS: {
+        resize: debounce(400, false, () => {
+          this.chart && this.chart.resize();
+        })
+      }
+    }
   },
   watch: {
     series: {
@@ -39,42 +44,31 @@ export default {
     this.addEventListener();
   },
   beforeDestroy() {
-    chart.dispose();
+    this.chart.dispose();
     this.removeEventListener();
   },
   methods: {
     addEventListener() {
-      window.addEventListener("resize", LISTENER_HOOKS.resize);
+      window.addEventListener("resize", this.LISTENER_HOOKS.resize);
     },
     removeEventListener() {
-      window.removeEventListener('resize', LISTENER_HOOKS.resize);
+      window.removeEventListener('resize', this.LISTENER_HOOKS.resize);
     },
     initChart() {
-      chart = echarts.init(this.$refs.chart);
-      chart.on("click", (params) => this.$emit("click-event", params));
+      this.chart = echarts.init(this.$refs.chart);
+      this.chart.on("click", (params) => this.$emit("click-event", params));
     },
     setOption() {
-      chart.setOption(this.getOption());
+      this.chart.setOption(this.getOption());
     },
     getOption() {
-      return {
-        title: {
-          text: this.title
-        },
-        tooltip: this.tooltip,
-        legend: this.legend,
-        grid: {
-          left: "3%",
-          right: "4%",
-          bottom: "3%",
-          containLabel: true,
-        },
-        xAxis: this.xAxis,
-        yAxis: this.yAxis,
-        series: this.series,
-        dataZoom: this.dataZoom,
-        radar: this.radar
-      };
+      const option = {};
+      for (const key in this._props) {
+        if (Object.hasOwnProperty.call(this._props, key) && !!this._props[key]) {
+          option[key] = this._props[key];
+        }
+      }
+      return option;
     },
   },
 };

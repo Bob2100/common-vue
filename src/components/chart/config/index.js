@@ -7,3 +7,6 @@ export const vConfig = {
   unit: 0,
   unitLabel: ''
 }
+export const CHART_TYPES = {
+  line: 'line'
+}

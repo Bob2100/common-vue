@@ -11,7 +11,7 @@
 
 <script>
 import BaseChart from './BaseChart.vue'
-import ChartTip from "./ChartTip.vue";
+import ChartTip from "./config/ChartTip.vue";
 import { vConfig } from './config/index'
 
 export default {
@@ -21,7 +21,7 @@ export default {
     ChartTip
   },
   props: {
-    title: String,
+    title: Object,
     tooltip: Object,
     xAxis: Object,
     yAxis: [Array, Object],

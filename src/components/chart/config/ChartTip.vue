@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import numUtils from "./utils/number";
+import utils from "../utils";
 export default {
   name: "ChartTip",
   props: {
@@ -46,7 +46,7 @@ export default {
       if (!param.vConfig) {
         return value;
       }
-      return `${numUtils.formatNum(value, { unit: param.vConfig.unit })}${param.vConfig.unitLabel || ''}`;
+      return `${utils.number.format(value, { unit: param.vConfig.unit })}${param.vConfig.unitLabel || ''}`;
     }
   },
 };

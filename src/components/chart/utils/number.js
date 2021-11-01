@@ -21,7 +21,7 @@ export default {
    *   并且最终返回值的类型是字符串；false，则不添加且返回值的类型仍是数字。
    * @returns {Number ｜ String} 转换后的值
   */
-  formatNum(num, config) {
+  format(num, config) {
     let { unit, point, isFormatZero, isWithThousandMark } = config;
     if (typeof isFormatZero !== 'boolean') {
       isFormatZero = false;
