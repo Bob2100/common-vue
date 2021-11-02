@@ -1,11 +1,8 @@
 <template>
   <div class="DemoLineChart chart-wrapper">
-    <ChartTrend title-text="资产负债率" :x-data="xData" :y-data="yData.debtRatio" />
-    <ChartTrend title-text="流动比率" :x-data="xData" :y-data="yData.flowRatio" />
-    <ChartTrend title-text="毛利率" :x-data="xData" :y-data="yData.profitRatio" />
-    <ChartTrend title-text="ROE" :x-data="xData" :y-data="yData.roe" />
-    <ChartTrend title-text="总资产周转率" :x-data="xData"
-      :y-data="yData.turnOverRatio" />
+    <ChartTrend title-text="图A" :x-data="xData" :y-data="yData.debtRatio" />
+    <ChartTrend title-text="图B" :x-data="xData" :y-data="yData.flowRatio" />
+    <ChartTrend title-text="图C" :x-data="xData" :y-data="yData.profitRatio" />
     <div class="chart-panel">
       <img :src="erniuIcon">
       <h4>欢迎扫码关注二牛的公众号 ：）</h4>
@@ -48,14 +45,6 @@ export default {
         profitRatio: [
           [0.38, 0.08, 0.41],
           [0.42, 0.45, 0.47]
-        ],
-        roe: [
-          [-0.03, -0.01, -0.02],
-          [-0.43, -0.7, -0.83]
-        ],
-        turnOverRatio: [
-          [0.41, 0.08, 0.21],
-          [0.17, 0.19, 0.22]
         ]
       };
     }

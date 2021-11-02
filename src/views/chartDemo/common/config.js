@@ -10,7 +10,7 @@ export default {
       return {
         bottom: 0,
         icon: 'circle',
-        data: ['客户值', '行业中值']
+        data: ['系列1', '系列2']
       }
     },
     title() {
