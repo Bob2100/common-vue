@@ -3,7 +3,7 @@
     <a class="navbar-brand" href="#">前端二牛</a>
     <div class="navbar-collapse">
       <ul class="navbar-nav">
-        <li><a href="#">看文章</a></li>
+        <li><a href="https://mp.weixin.qq.com/s/TDxxvnu6qkvOJWcQmXbqew" target="_blank">看文章</a></li>
       </ul>
     </div>
   </div>
