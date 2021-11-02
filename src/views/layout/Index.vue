@@ -1,6 +1,6 @@
 <template>
   <el-container class="app">
-    <el-header class="app-header">
+    <el-header class="app-header" style="height:53px">
       <Header />
     </el-header>
     <el-main>
@@ -46,8 +46,6 @@ export default {
   right: 0;
   background-color: @dark;
   color: white;
-  line-height: 60px;
-  font-size: 12px;
   .el-dropdown {
     color: white;
   }

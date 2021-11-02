@@ -3,7 +3,7 @@
     <a class="navbar-brand" href="#">前端二牛</a>
     <div class="navbar-collapse">
       <ul class="navbar-nav">
-        <li>看文章</li>
+        <li><a href="#">看文章</a></li>
       </ul>
     </div>
   </div>
@@ -15,13 +15,13 @@ export default {
 };
 </script>
 <style scoped lang="less">
-.Header {
-  height: 100%;
-}
 .navbar {
   display: flex;
 }
 .navbar-brand {
+  height: 53px;
+  line-height: 53px;
+  padding: 0 21px;
   font-size: 24px;
   font-weight: 700;
   margin-right: 0;
@@ -36,7 +36,22 @@ export default {
   flex-grow: 1;
 }
 .navbar-nav {
+  margin: 0;
+  padding-left: 0;
   display: flex;
   list-style: none;
+  > li > a {
+    color: #fff;
+    font-size: 16px;
+    padding: 0 21px;
+    line-height: 53px;
+    font-weight: 700;
+    position: relative;
+    display: block;
+    &:hover {
+      color: #1abc9c;
+      background-color: transparent;
+    }
+  }
 }
 </style>
