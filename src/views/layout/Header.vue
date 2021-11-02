@@ -1,6 +1,11 @@
 <template>
-  <div class="Header">
+  <div class="Header navbar">
     <a class="navbar-brand" href="#">前端二牛</a>
+    <div class="navbar-collapse">
+      <ul class="navbar-nav">
+        <li>看文章</li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -10,8 +15,11 @@ export default {
 };
 </script>
 <style scoped lang="less">
-.Header{
+.Header {
   height: 100%;
+}
+.navbar {
+  display: flex;
 }
 .navbar-brand {
   font-size: 24px;
@@ -23,5 +31,12 @@ export default {
     color: #1abc9c;
     background-color: transparent;
   }
+}
+.navbar-collapse {
+  flex-grow: 1;
+}
+.navbar-nav {
+  display: flex;
+  list-style: none;
 }
 </style>
