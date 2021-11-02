@@ -5,7 +5,7 @@
       <ChartTrend title-text="图B" :x-data="xData" :y-data="yData.flowRatio" />
       <ChartTrend title-text="图C" :x-data="xData" :y-data="yData.profitRatio" />
       <div class="chart-panel">
-        <img :src="erniuIcon">
+        <img style="width:50%;display:inline-block" :src="erniuIcon">
         <h4>欢迎扫码关注二牛的公众号 ：）</h4>
       </div>
     </div>
