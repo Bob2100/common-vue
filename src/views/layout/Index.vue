@@ -3,7 +3,7 @@
     <el-header class="app-header" style="height:53px">
       <Header />
     </el-header>
-    <el-main>
+    <el-main style="margin-top:53px">
       <Main />
     </el-main>
   </el-container>
@@ -36,7 +36,6 @@ export default {
 @green: #1abc9c;
 .app {
   height: 100%;
-  padding-top: 60px;
 }
 .app-header {
   box-shadow: 0 0 10px @dark;
