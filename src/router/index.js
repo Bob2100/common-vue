@@ -8,6 +8,10 @@ const routes = [
   {
     path: '/',
     component: Layout
+  },
+  {
+    path: '*',
+    component: Layout
   }
 ]
 
