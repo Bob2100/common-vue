@@ -9,7 +9,7 @@
         </li>
         <li>
           <a href="https://github.com/Bob2100/common-vue/tags"
-            target="_blank">v0.1.0</a>
+            target="_blank">v0.1.1</a>
         </li>
       </ul>
     </div>
