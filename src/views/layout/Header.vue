@@ -9,7 +9,7 @@
         </bo-navbar-item>
         <bo-navbar-item>
           <a href="https://github.com/Bob2100/common-vue/tags"
-            target="_blank">v0.1.1</a>
+            target="_blank">{{version}}</a>
         </bo-navbar-item>
       </bo-navbar>
     </div>
@@ -19,6 +19,11 @@
 <script>
 export default {
   name: "Header",
+  computed: {
+    version() {
+      return `v${process.env.VUE_APP_VERSION}`;
+    }
+  }
 };
 </script>
 <style scoped lang="less">
