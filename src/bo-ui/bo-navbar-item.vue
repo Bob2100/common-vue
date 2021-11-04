@@ -1,16 +1,16 @@
 <template>
-  <li class="co-navbar-item">
+  <li class="bo-navbar-item">
     <slot></slot>
   </li>
 </template>
 
 <script>
 export default {
-  name: 'CoNavbarItem'
+  name: 'BoNavbarItem'
 }
 </script>
 <style scoped lang="less">
-.co-navbar-item {
+.bo-navbar-item {
   > a {
     color: #fff;
     font-size: 16px;
