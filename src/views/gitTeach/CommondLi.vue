@@ -8,7 +8,7 @@
         </strong>
         <slot name="placeholder"></slot>
       </i>
-      <span class="commond-desc">示例</span>
+      <span class="commond-desc">示例：</span>
       <i>
         <strong>
           <slot name="commond"></slot>

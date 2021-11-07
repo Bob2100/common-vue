@@ -14,38 +14,14 @@
                 <template v-slot:param> "wuwenbo"</template>
                 <template v-slot:desc> 配置用户名为wuwenbo</template>
               </CommondLi>
-              <li>
-                <h4>邮箱</h4>
-                <p>
-                  <i><strong>git config --global user.email</strong> [email]</i>
-                  <span class="commond-desc">示例</span>
-                  <i><strong>git config --global user.email</strong>
-                    "bob_w@qq.com"</i>
-                  <span class="commond-desc">配置邮箱为bob_w@qq.com</span>
-                </p>
-              </li>
+              <CommondLi title="邮箱">
+                <template v-slot:commond>git config --global
+                  user.email</template>
+                <template v-slot:placeholder> [email]</template>
+                <template v-slot:param> "bob_w@qq.com"</template>
+                <template v-slot:desc> 配置邮箱为bob_w@qq.com</template>
+              </CommondLi>
             </ol>
-          </li>
-        </ol>
-      </li>
-      <li>
-        <h3>全局配置</h3>
-        <ol>
-          <li>
-            <h4>用户名</h4>
-            <p>
-              <i><strong>git config --global user.name</strong> [name]</i>
-              <span style="margin:0 20px">示例</span>
-              <i><strong>git config --global user.name</strong> "wuwenbo"</i>
-            </p>
-          </li>
-          <li>
-            <h4>邮箱</h4>
-            <p><i><strong>git config --global user.email</strong> [email]</i>
-            </p>
-            <h4>示例</h4>
-            <p><i><strong>git config --global user.email</strong>
-                "bob_w@qq.com"</i></p>
           </li>
         </ol>
       </li>
