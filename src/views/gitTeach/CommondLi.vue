@@ -8,13 +8,16 @@
         </strong>
         <slot name="placeholder"></slot>
       </i>
-      <span class="commond-desc">示例：</span>
-      <i>
-        <strong>
-          <slot name="commond"></slot>
-        </strong>
-        <slot name="param"> </slot>
-      </i>
+      <span v-if="isShowCase">
+        <span class="commond-desc">示例：</span>
+        <i>
+          <strong>
+            <slot name="commond"></slot>
+          </strong>
+          <slot name="param"> </slot>
+        </i>
+      </span>
+
       <span class="commond-desc">
         <slot name="desc"></slot>
       </span>
@@ -27,6 +30,10 @@ export default {
   name: 'CommondLi',
   props: {
     title: String,
+    isShowCase: {
+      type: Boolean,
+      default: true
+    }
   }
 }
 </script>

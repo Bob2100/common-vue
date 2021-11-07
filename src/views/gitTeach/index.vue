@@ -24,6 +24,26 @@
             </ol>
           </li>
         </ol>
+        <ol type="i">
+          <li>
+            <h3>别名相关</h3>
+            <ol>
+              <CommondLi title="日志" :isShowCase="false">
+                <template v-slot:commond>git config --global alias.lg "log
+                  --color --graph
+                  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s
+                  %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset'
+                  --abbrev-commit"</template>
+              </CommondLi>
+              <CommondLi title="忽略本地修改" :isShowCase="false">
+                <template v-slot:commond>git config --global alias.sw "update-index --skip-worktree"</template>
+              </CommondLi>
+              <CommondLi title="取消忽略本地修改" :isShowCase="false">
+                <template v-slot:commond>git config --global alias.nsw "update-index --skip-worktree"</template>
+              </CommondLi>
+            </ol>
+          </li>
+        </ol>
       </li>
     </ol>
 
