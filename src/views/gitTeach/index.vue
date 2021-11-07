@@ -7,16 +7,13 @@
           <li>
             <h3>用户相关</h3>
             <ol>
-              <li>
-                <h4>用户名</h4>
-                <p>
-                  <i><strong>git config --global user.name</strong> [name]</i>
-                  <span class="commond-desc">示例</span>
-                  <i><strong>git config --global user.name</strong>
-                    "wuwenbo"</i>
-                  <span class="commond-desc">配置用户名为wuwenbo</span>
-                </p>
-              </li>
+              <CommondLi title="用户名">
+                <template v-slot:commond>git config --global
+                  user.name</template>
+                <template v-slot:placeholder> [name]</template>
+                <template v-slot:param> "wuwenbo"</template>
+                <template v-slot:desc> 配置用户名为wuwenbo</template>
+              </CommondLi>
               <li>
                 <h4>邮箱</h4>
                 <p>
@@ -58,13 +55,11 @@
 </template>
 
 <script>
+import CommondLi from './CommondLi.vue'
 export default {
-  name: 'GitTeach'
+  name: 'GitTeach',
+  components: {
+    CommondLi
+  }
 }
 </script>
-
-<style lang="less" scoped>
-.commond-desc {
-  margin: 0 10px;
-}
-</style>

@@ -19,7 +19,7 @@ const routes = [
       {
         path: "GitTeach",
         name: "GitTeach",
-        component: () => import('../views/GitTeach.vue')
+        component: () => import('../views/gitTeach')
       }
     ]
   },
