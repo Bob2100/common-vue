@@ -23,12 +23,12 @@ export default {
     };
   },
   watch: {
-    activeIndex(next, pre) {
+    activeIndex(next) {
       if (next.indexOf('http') === 0) {
-        window.open(this.activeIndex);
+        window.open(next);
         return;
       }
-      this.$router.push({ name: this.activeIndex })
+      this.$router.push({ name: next })
     }
   },
   methods: {
