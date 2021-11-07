@@ -11,6 +11,8 @@
       <el-menu-item index="https://mp.weixin.qq.com/s/TDxxvnu6qkvOJWcQmXbqew">
         工作日志</el-menu-item>
     </el-submenu>
+    <el-menu-item index="https://github.com/Bob2100/common-vue/tags">{{version}}
+    </el-menu-item>
   </el-menu>
 </template>
 
@@ -21,6 +23,11 @@ export default {
     return {
       activeIndex: 'index',
     };
+  },
+  computed: {
+    version() {
+      return `v${process.env.VUE_APP_VERSION}`;
+    }
   },
   watch: {
     activeIndex(next) {
