@@ -26,5 +26,13 @@ const router = new VueRouter({
   mode: "history",
   routes
 })
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(route) {
+  const currentRoute = router.currentRoute;
+  if (currentRoute.name === route.name) {
+    return;
+  }
+  return originalPush.call(this, route).catch(err => err);
+}
 
 export default router
