@@ -8,12 +8,12 @@ const routes = [
   {
     path: '/',
     name: 'Layout',
-    redirect: "/IndexPage",
+    redirect: "/index",
     component: Layout,
     children: [
       {
-        path: "IndexPage",
-        name: "IndexPage",
+        path: "index",
+        name: "index",
         component: () => import('../views/index/IndexPage.vue')
       },
       {
@@ -25,7 +25,7 @@ const routes = [
   },
   {
     path: '*',
-    component: Layout
+    redirect: "/index",
   }
 ]
 
