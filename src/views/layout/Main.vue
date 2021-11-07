@@ -1,6 +1,6 @@
 <template>
   <div class="Main">
-    <!-- <router-view /> -->
+    <router-view />
     <DemoLineChart />
   </div>
 </template>

@@ -4,6 +4,10 @@
     <div class="navbar-collapse">
       <bo-navbar>
         <bo-navbar-item>
+          <a href="javascript:;"
+            @click="$router.push({name:'GitTeach'})">Git常用命令</a>
+        </bo-navbar-item>
+        <bo-navbar-item>
           <a href="https://mp.weixin.qq.com/s/TDxxvnu6qkvOJWcQmXbqew"
             target="_blank">看文章</a>
         </bo-navbar-item>

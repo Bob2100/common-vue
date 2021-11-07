@@ -7,7 +7,14 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    component: Layout
+    component: Layout,
+    children: [
+      {
+        path: "GitTeach",
+        name: "GitTeach",
+        component: () => import('../views/GitTeach.vue')
+      },
+    ]
   },
   {
     path: '*',
@@ -16,6 +23,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  mode: "history",
   routes
 })
 
