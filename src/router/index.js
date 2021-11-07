@@ -8,13 +8,19 @@ const routes = [
   {
     path: '/',
     name: 'Layout',
+    redirect: "/IndexPage",
     component: Layout,
     children: [
+      {
+        path: "IndexPage",
+        name: "IndexPage",
+        component: () => import('../views/IndexPage.vue')
+      },
       {
         path: "GitTeach",
         name: "GitTeach",
         component: () => import('../views/GitTeach.vue')
-      },
+      }
     ]
   },
   {
