@@ -1,5 +1,5 @@
 <template>
-  <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal"
+  <el-menu :default-active="activeIndex" class="Header" mode="horizontal"
     @select="handleSelect" background-color="#34495e" text-color="#fff"
     active-text-color="#1abc9c">
     <el-menu-item index="0">
@@ -26,10 +26,10 @@
 
 <script>
 export default {
+  name:'Header',
   data() {
     return {
-      activeIndex: '1',
-      activeIndex2: '1'
+      activeIndex: '0',
     };
   },
   methods: {
