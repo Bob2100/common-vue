@@ -5,7 +5,6 @@ import './plugins/element.js'
 import router from './router'
 import store from './store'
 import BoUI from './bo-ui'
-import './bo-ui/index.less'
 import './style/index.less'
 import mixin from './mixin'
 

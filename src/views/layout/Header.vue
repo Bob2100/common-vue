@@ -3,7 +3,7 @@
     @select="handleSelect" background-color="#34495e" text-color="#fff"
     active-text-color="#1abc9c">
     <el-menu-item index="0">
-      <span @click="$router.push({name:'Layout'})">前端二牛</span>
+      <span class="logo" @click="$router.push({name:'Layout'})">前端二牛</span>
     </el-menu-item>
     <el-menu-item index="1">处理中心</el-menu-item>
     <el-submenu index="2">
@@ -39,8 +39,3 @@ export default {
   }
 }
 </script>
-<style scoped lang="less">
-.el-menu.el-menu--horizontal {
-  border-bottom: none;
-}
-</style>
