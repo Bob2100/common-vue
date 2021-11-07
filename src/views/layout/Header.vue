@@ -1,6 +1,7 @@
 <template>
   <div class="Header navbar">
-    <a class="navbar-brand" href="#">前端二牛</a>
+    <a class="navbar-brand" href="javascript:;"
+      @click="$router.push({name:'Layout'})">前端二牛</a>
     <div class="navbar-collapse">
       <bo-navbar>
         <bo-navbar-item>
