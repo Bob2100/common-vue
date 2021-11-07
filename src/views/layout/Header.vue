@@ -5,28 +5,20 @@
     <el-menu-item index="0">
       <span class="logo" @click="$router.push({name:'Layout'})">前端二牛</span>
     </el-menu-item>
-    <el-menu-item index="1">处理中心</el-menu-item>
+    <el-menu-item index="1">Git常用命令</el-menu-item>
     <el-submenu index="2">
-      <template slot="title">我的工作台</template>
-      <el-menu-item index="2-1">选项1</el-menu-item>
-      <el-menu-item index="2-2">选项2</el-menu-item>
-      <el-menu-item index="2-3">选项3</el-menu-item>
-      <el-submenu index="2-4">
-        <template slot="title">选项4</template>
-        <el-menu-item index="2-4-1">选项1</el-menu-item>
-        <el-menu-item index="2-4-2">选项2</el-menu-item>
-        <el-menu-item index="2-4-3">选项3</el-menu-item>
-      </el-submenu>
+      <template slot="title">看文章</template>
+      <el-menu-item index="2-1">
+        <a href="https://mp.weixin.qq.com/s/TDxxvnu6qkvOJWcQmXbqew"
+          target="_blank">工作日志</a>
+      </el-menu-item>
     </el-submenu>
-    <el-menu-item index="3" disabled>消息中心</el-menu-item>
-    <el-menu-item index="4"><a href="https://www.ele.me"
-        target="_blank">订单管理</a></el-menu-item>
   </el-menu>
 </template>
 
 <script>
 export default {
-  name:'Header',
+  name: 'Header',
   data() {
     return {
       activeIndex: '0',
