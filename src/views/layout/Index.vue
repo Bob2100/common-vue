@@ -4,7 +4,6 @@
       <Header />
     </el-header>
     <el-main style="margin-top:60px">
-      <el-button type="primary">tij</el-button>
       <Main />
     </el-main>
   </el-container>
