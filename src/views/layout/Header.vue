@@ -21,24 +21,37 @@ export default {
   name: 'Header',
   data() {
     return {
-      activeIndex: 'index',
+      activeIndex: '',
     };
   },
   computed: {
+    currentPath() {
+      return this.$route.path;
+    },
     version() {
       return `v${process.env.VUE_APP_VERSION}`;
     }
   },
   watch: {
+    currentPath() {
+      this.initActiveIndex();
+    },
     activeIndex(next) {
       if (next.indexOf('http') === 0) {
+        this.$nextTick(() => this.initActiveIndex());
         window.open(next);
         return;
       }
       this.$router.push({ name: next })
     }
   },
+  created() {
+    this.initActiveIndex()
+  },
   methods: {
+    initActiveIndex() {
+      this.activeIndex = this.currentPath.substring(1);
+    },
     handleSelect(key) {
       this.activeIndex = key
     }
