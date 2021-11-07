@@ -1,12 +1,16 @@
 <template>
   <div class="IndexPage">
-    首页
+    <Faq/>
   </div>
 </template>
 
 <script>
+import Faq from './Faq.vue'
 export default {
-  name: 'IndexPage'
+  name: 'IndexPage',
+  components:{
+    Faq
+  }
 }
 </script>
 

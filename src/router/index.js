@@ -14,7 +14,7 @@ const routes = [
       {
         path: "IndexPage",
         name: "IndexPage",
-        component: () => import('../views/IndexPage.vue')
+        component: () => import('../views/index/IndexPage.vue')
       },
       {
         path: "GitTeach",
