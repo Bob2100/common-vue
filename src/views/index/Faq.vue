@@ -7,6 +7,8 @@
     <p>git clone git@github.com:Bob2100/common-vue.git</p>
     <p>如下图所示：</p>
     <p><img class="common-img" src="../../assets/clone.png"></p>
+    <p><img class="common-img width-middle"
+        src="../../assets/imgs/clone-https.png"></p>
   </div>
 </template>
 
