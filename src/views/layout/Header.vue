@@ -1,60 +1,42 @@
 <template>
-  <div class="Header navbar">
-    <a class="navbar-brand" href="javascript:;"
-      @click="$router.push({name:'Layout'})">前端二牛</a>
-    <div class="navbar-collapse">
-      <bo-navbar v-model="activeItem">
-        <bo-navbar-item name="git">
-          <a href="javascript:;"
-            @click="$router.push({name:'GitTeach'})">Git常用命令</a>
-        </bo-navbar-item>
-        <bo-navbar-item name="article">
-          <a href="https://mp.weixin.qq.com/s/TDxxvnu6qkvOJWcQmXbqew"
-            target="_blank">看文章</a>
-        </bo-navbar-item>
-        <bo-navbar-item name="version">
-          <a href="https://github.com/Bob2100/common-vue/tags"
-            target="_blank">{{version}}</a>
-        </bo-navbar-item>
-      </bo-navbar>
-    </div>
-  </div>
+  <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal"
+    @select="handleSelect" background-color="#34495e" text-color="#fff"
+    active-text-color="#1abc9c">
+    <el-menu-item index="0">
+      <span @click="$router.push({name:'Layout'})">前端二牛</span>
+    </el-menu-item>
+    <el-menu-item index="1">处理中心</el-menu-item>
+    <el-submenu index="2">
+      <template slot="title">我的工作台</template>
+      <el-menu-item index="2-1">选项1</el-menu-item>
+      <el-menu-item index="2-2">选项2</el-menu-item>
+      <el-menu-item index="2-3">选项3</el-menu-item>
+      <el-submenu index="2-4">
+        <template slot="title">选项4</template>
+        <el-menu-item index="2-4-1">选项1</el-menu-item>
+        <el-menu-item index="2-4-2">选项2</el-menu-item>
+        <el-menu-item index="2-4-3">选项3</el-menu-item>
+      </el-submenu>
+    </el-submenu>
+    <el-menu-item index="3" disabled>消息中心</el-menu-item>
+    <el-menu-item index="4"><a href="https://www.ele.me"
+        target="_blank">订单管理</a></el-menu-item>
+  </el-menu>
 </template>
+
 
 <script>
 export default {
-  name: "Header",
   data() {
     return {
-      activeItem: 'version'
-    }
+      activeIndex: '1',
+      activeIndex2: '1'
+    };
   },
-  computed: {
-    version() {
-      return `v${process.env.VUE_APP_VERSION}`;
+  methods: {
+    handleSelect(key, keyPath) {
+      console.log(key, keyPath);
     }
   }
-};
+}
 </script>
-<style scoped lang="less">
-.navbar {
-  display: flex;
-}
-.navbar-brand {
-  height: 53px;
-  line-height: 53px;
-  padding: 0 21px;
-  font-size: 24px;
-  font-weight: 700;
-  margin-right: 0;
-  color: #fff;
-  display: inline-block;
-  &:hover {
-    color: #1abc9c;
-    background-color: transparent;
-  }
-}
-.navbar-collapse {
-  flex-grow: 1;
-}
-</style>
