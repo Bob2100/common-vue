@@ -6,7 +6,10 @@
 
 <script>
 export default {
-  name: 'BoNavbar'
+  name: 'BoNavbar',
+  props: {
+    value: String
+  }
 }
 </script>
 
