@@ -24,7 +24,6 @@
   </el-menu>
 </template>
 
-
 <script>
 export default {
   data() {
@@ -40,3 +39,8 @@ export default {
   }
 }
 </script>
+<style scoped lang="less">
+.el-menu.el-menu--horizontal {
+  border-bottom: none;
+}
+</style>
