@@ -1,3 +1,4 @@
+import '../element-theme/index.css';
 import Vue from 'vue'
 import {
   Pagination,
