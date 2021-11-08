@@ -21,7 +21,7 @@ export default {
    *   并且最终返回值的类型是字符串；false，则不添加且返回值的类型仍是数字。
    * @returns {Number ｜ String} 转换后的值
   */
-  format(num, config) {
+  format(num, config = {}) {
     let { unit, point, isFormatZero, isWithThousandMark } = config;
     if (typeof isFormatZero !== 'boolean') {
       isFormatZero = false;
@@ -49,7 +49,7 @@ export default {
   },
   /**
    * @description 把数字格式化成带千分位符的字符串
-   * @param {num: Numner} 待格式化的数字
+   * @param {num: Number} 待格式化的数字
    * @returns {String} 带千分位符的字符串
   */
   withThousandMark(num) {
