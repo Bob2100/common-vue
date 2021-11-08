@@ -38,3 +38,5 @@ git tag --查看所有标签
 git push origin v0.1.0 --将标签v0.1.0推送到远程仓库
 git push origin :refs/tags/v0.1.0 --将标签v0.1.0从远程仓库删除
 git ls-files -v . | grep ^S --查看哪些文件被sw
+
+git详细教程：https://www.liaoxuefeng.com/wiki/896043488029600
