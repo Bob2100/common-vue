@@ -5,7 +5,7 @@ git config --global user.email "bob_w@qq.com"
 配置别名
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=format:'%Y-%m-%d %H:%M:%S'"
 git config --global alias.sw "update-index --skip-worktree"
-git config --global alias.nsw "update-index --skip-worktree"
+git config --global alias.nsw "update-index --no-skip-worktree"
 
 配置比较合并工具
 git config --global diff.tool "bc3"
