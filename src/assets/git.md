@@ -13,6 +13,8 @@ git config --global difftool.bc3.path "C:\software\Beyond Compare 4\BComp.exe"
 git config --global merge.tool "bc3"
 git config --global mergetool.bc3.path "C:\software\Beyond Compare 4\BComp.exe"
 
+Beyond Compare 4试用期到期解决方案：https://blog.csdn.net/xxlcan/article/details/111947885
+
 常用命令
 git status --查看工作区状态
 git pull --拉取远程仓库代码
