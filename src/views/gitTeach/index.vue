@@ -26,7 +26,7 @@
     <p>git status --查看工作区状态</p>
     <p>git pull --拉取远程仓库代码</p>
     <p>git push --推送代码到远程</p>
-    <p>it add . --将当前修改加入待提交区</p>
+    <p>git add . --将当前修改加入待提交区</p>
     <p>git commit -m '注释' --本地提交</p>
     <p>git checkout dev --本地切换到dev分支</p>
     <p>git checkout -b dev origin/dev --检出远程dev分支到本地</p>
