@@ -30,7 +30,6 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: "history",
   routes
 })
 const originalPush = VueRouter.prototype.push
