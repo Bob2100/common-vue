@@ -8,7 +8,7 @@
     <el-menu-item index="GitTeach">Git常用命令</el-menu-item>
     <el-submenu index="article">
       <template slot="title">看文章</template>
-      <el-menu-item index="https://mp.weixin.qq.com/s/PJxIFhB9-nDNED-nLoLNhw">
+      <el-menu-item :index="workDiaryUrl">
         工作日志</el-menu-item>
     </el-submenu>
     <el-menu-item index="https://github.com/Bob2100/common-vue/tags">{{version}}
@@ -30,6 +30,9 @@ export default {
     },
     version() {
       return `v${process.env.VUE_APP_VERSION}`;
+    },
+    workDiaryUrl() {
+      return window.workDiaryUrl;
     }
   },
   watch: {
