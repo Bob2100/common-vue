@@ -67,10 +67,11 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+@import "../../bo-ui/variables.less";
 .Header {
   display: flex;
   justify-content: space-between;
-  background-color: #34495e;
+  background-color: @dark;
 }
 .header-menu-more {
   display: none;
@@ -85,7 +86,7 @@ export default {
   color: #fff;
   transition: all 0.3s;
   &:hover {
-    color: #1abc9c;
+    color: @green;
   }
 }
 @media screen and (max-width: 900px) {
