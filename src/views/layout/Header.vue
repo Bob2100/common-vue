@@ -21,7 +21,7 @@
       <i class="el-icon-s-fold" @click="isShowDrawer = true"></i>
     </div>
     <el-drawer :visible.sync="isShowDrawer" :with-header="false" append-to-body>
-      <span>我来啦!</span>
+      <span @click="isShowDrawer = false">我来啦!</span>
     </el-drawer>
   </div>
 </template>
