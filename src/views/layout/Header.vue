@@ -21,7 +21,16 @@
       <i class="el-icon-s-fold" @click="isShowDrawer = true"></i>
     </div>
     <el-drawer :visible.sync="isShowDrawer" :with-header="false" append-to-body>
-      <span @click="isShowDrawer = false">我来啦!</span>
+      <el-menu :default-active="activeIndex" class="header-menu"
+        @select="handleSelect" background-color="#34495e" text-color="#fff"
+        active-text-color="#1abc9c">
+        <el-menu-item index="GitTeach">Git常用命令
+        </el-menu-item>
+        <el-menu-item :index="workDiaryUrl">工作日志</el-menu-item>
+        <el-menu-item index="https://github.com/Bob2100/common-vue/tags">
+          {{version}}
+        </el-menu-item>
+      </el-menu>
     </el-drawer>
   </div>
 </template>
