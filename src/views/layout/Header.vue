@@ -20,7 +20,8 @@
     <div class="header-menu-more">
       <i class="el-icon-s-fold" @click="isShowDrawer = true"></i>
     </div>
-    <el-drawer :visible.sync="isShowDrawer" :with-header="false" append-to-body>
+    <el-drawer @click.native="isShowDrawer = false" :visible.sync="isShowDrawer"
+      :with-header="false" append-to-body>
       <el-menu :default-active="activeIndex" class="header-menu"
         @select="handleSelect" background-color="#34495e" text-color="#fff"
         active-text-color="#1abc9c">
@@ -72,6 +73,9 @@ export default {
     this.initActiveIndex()
   },
   methods: {
+    ss() {
+      console.log('sss');
+    },
     initActiveIndex() {
       this.activeIndex = this.currentPath.substring(1);
     },
