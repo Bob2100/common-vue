@@ -17,7 +17,12 @@
         class="header-menu-item">{{version}}
       </el-menu-item>
     </el-menu>
-    <div class="header-menu-more"><i class="el-icon-s-fold"></i></div>
+    <div class="header-menu-more">
+      <i class="el-icon-s-fold" @click="isShowDrawer = true"></i>
+    </div>
+    <el-drawer :visible.sync="isShowDrawer" :with-header="false" append-to-body>
+      <span>我来啦!</span>
+    </el-drawer>
   </div>
 </template>
 
@@ -27,6 +32,7 @@ export default {
   data() {
     return {
       activeIndex: '',
+      isShowDrawer: false
     };
   },
   computed: {
