@@ -1,7 +1,7 @@
 <template>
   <MenuCommon class="MenuPC" @select="$emit('select', $event)"
-    :activeIndex="activeIndex" :version="version"
-    :workDiaryUrl="workDiaryUrl" />
+    :activeIndex="activeIndex" :version="version" :workDiaryUrl="workDiaryUrl"
+    type="PC" />
 </template>
 
 <script>
