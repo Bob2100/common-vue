@@ -1,8 +1,8 @@
 <template>
   <div class="Header">
-    <MenuPC class="header-menu" @select="handleSelect"
-      :activeIndex="activeIndex" :version="version"
-      :workDiaryUrl="workDiaryUrl" />
+    <MenuCommon class="header-menu" @select="handleSelect"
+      :activeIndex="activeIndex" :version="version" :workDiaryUrl="workDiaryUrl"
+      type="PC" />
     <MenuMobile class="header-menu-more" @select="handleSelect"
       :activeIndex="activeIndex" :version="version"
       :workDiaryUrl="workDiaryUrl" />
@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import MenuPC from './menu/MenuPC'
+import MenuCommon from './menu/MenuCommon.vue'
 import MenuMobile from './menu/MenuMobile.vue'
 export default {
   name: 'Header',
   components: {
-    MenuPC,
+    MenuCommon,
     MenuMobile
   },
   data() {
