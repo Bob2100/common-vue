@@ -1,7 +1,11 @@
 <template>
   <div class="Header">
-    <MenuPc class="header-menu" @select="handleSelect" />
-    <MenuMobile class="header-menu-more" @select="handleSelect" />
+    <MenuPc class="header-menu" @select="handleSelect"
+      :activeIndex="activeIndex" :version="version"
+      :workDiaryUrl="workDiaryUrl" />
+    <MenuMobile class="header-menu-more" @select="handleSelect"
+      :activeIndex="activeIndex" :version="version"
+      :workDiaryUrl="workDiaryUrl" />
   </div>
 </template>
 
