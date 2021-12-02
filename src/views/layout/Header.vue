@@ -31,7 +31,7 @@ export default {
   flex: 1;
 }
 @media screen and (max-width: 900px) {
-  .header-menu-item {
+  /deep/ .header-menu-item {
     display: none;
   }
   .header-menu-more {

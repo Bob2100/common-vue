@@ -1,5 +1,5 @@
 <template>
-  <el-menu :default-active="active" class="MenuPc" mode="horizontal"
+  <el-menu :default-active="activeIndex" class="MenuPc" mode="horizontal"
     @select="handleSelect" background-color="#34495e" text-color="#fff"
     active-text-color="#1abc9c">
     <el-menu-item index="index">
