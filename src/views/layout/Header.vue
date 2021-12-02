@@ -1,6 +1,6 @@
 <template>
   <div class="Header">
-    <MenuPc class="header-menu" @select="handleSelect"
+    <MenuPC class="header-menu" @select="handleSelect"
       :activeIndex="activeIndex" :version="version"
       :workDiaryUrl="workDiaryUrl" />
     <MenuMobile class="header-menu-more" @select="handleSelect"
@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import MenuPc from './menu/MenuPc.vue'
+import MenuPC from './menu/MenuPC'
 import MenuMobile from './menu/MenuMobile.vue'
 export default {
   name: 'Header',
   components: {
-    MenuPc,
+    MenuPC,
     MenuMobile
   },
   data() {
