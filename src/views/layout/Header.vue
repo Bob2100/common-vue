@@ -1,18 +1,58 @@
 <template>
   <div class="Header">
-    <MenuPc class="header-menu" />
-    <MenuMobile class="header-menu-more" />
+    <MenuPc class="header-menu" @select="handleSelect" />
+    <MenuMobile class="header-menu-more" @select="handleSelect" />
   </div>
 </template>
 
 <script>
-import MenuPc from './MenuPc.vue'
-import MenuMobile from './MenuMobile.vue'
+import MenuPc from './menu/MenuPc.vue'
+import MenuMobile from './menu/MenuMobile.vue'
 export default {
   name: 'Header',
   components: {
     MenuPc,
     MenuMobile
+  },
+  data() {
+    return {
+      activeIndex: '',
+    }
+  },
+  computed: {
+    currentPath() {
+      return this.$route.path;
+    },
+    version() {
+      return `v${process.env.VUE_APP_VERSION}`;
+    },
+    workDiaryUrl() {
+      return window.workDiaryUrl;
+    }
+  },
+  watch: {
+    currentPath() {
+      this.initActiveIndex();
+    },
+    activeIndex(next) {
+      if (next.indexOf('http') === 0) {
+        this.$nextTick(() => this.initActiveIndex());
+        window.open(next);
+        return;
+      }
+      this.$router.push({ name: next })
+    }
+  },
+  created() {
+    this.initActiveIndex()
+  },
+  methods: {
+    initActiveIndex() {
+      this.activeIndex = this.currentPath.substring(1);
+    },
+    handleSelect(key) {
+      this.activeIndex = key
+    }
   }
 }
 </script>
