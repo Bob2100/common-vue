@@ -1,13 +1,31 @@
 <template>
   <div>
-    <bo-radar-chart v-bind="option" />
+    <bo-chart v-bind="radarOption" />
+    <bo-chart v-bind="lineOption" />
   </div>
 </template>
 
 <script>
 export default {
   computed: {
-    option() {
+    lineOption() {
+      return {
+        xAxis: {
+          type: 'category',
+          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [
+          {
+            data: [150, 230, 224, 218, 135, 147, 260],
+            type: 'line'
+          }
+        ]
+      };
+    },
+    radarOption() {
       return {
         title: {
           text: 'Basic Radar Chart'

@@ -22,9 +22,9 @@ const routes = [
         component: () => import('../views/gitTeach')
       },
       {
-        path: "BoCharts",
-        name: "BoCharts",
-        component: () => import('../views/BoCharts')
+        path: "BoChartsDemo",
+        name: "BoChartsDemo",
+        component: () => import('../views/BoChartsDemo')
       },
     ]
   },

@@ -5,7 +5,7 @@
     <el-menu-item index="index" v-if="isPC">
       <span class="logo">前端二牛</span>
     </el-menu-item>
-    <el-menu-item index="BoCharts" class="header-menu-item">BoCharts
+    <el-menu-item index="BoChartsDemo" class="header-menu-item">BoCharts
     </el-menu-item>
     <el-menu-item index="GitTeach" class="header-menu-item">Git常用命令
     </el-menu-item>
