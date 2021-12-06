@@ -3,7 +3,7 @@
     :mode="isPC ? 'horizontal' : ''" @select="$emit('select', $event)"
     background-color="#34495e" text-color="#fff" active-text-color="#1abc9c">
     <el-menu-item index="index" v-if="isPC">
-      <span class="logo" @click="$router.push({name:'Layout'})">前端二牛</span>
+      <span class="logo">前端二牛</span>
     </el-menu-item>
     <el-menu-item index="GitTeach" class="header-menu-item">Git常用命令
     </el-menu-item>
