@@ -20,7 +20,12 @@ const routes = [
         path: "GitTeach",
         name: "GitTeach",
         component: () => import('../views/gitTeach')
-      }
+      },
+      {
+        path: "BoCharts",
+        name: "BoCharts",
+        component: () => import('../views/BoCharts')
+      },
     ]
   },
   {
