@@ -3,22 +3,19 @@
     <i class="el-icon-s-fold" @click="isShowDrawer = true"></i>
     <el-drawer @click.native="isShowDrawer = false" :visible.sync="isShowDrawer"
       :with-header="false" append-to-body>
-      <el-menu :default-active="activeIndex" class="header-menu"
-        @select="$emit('select', $event)" background-color="#34495e"
-        text-color="#fff" active-text-color="#1abc9c">
-        <el-menu-item index="GitTeach">Git常用命令
-        </el-menu-item>
-        <el-menu-item :index="workDiaryUrl">工作日志</el-menu-item>
-        <el-menu-item index="https://github.com/Bob2100/common-vue/tags">
-          {{version}}
-        </el-menu-item>
-      </el-menu>
+      <MenuCommon class="header-menu" @select="$emit('select', $event)"
+        :activeIndex="activeIndex" :version="version"
+        :workDiaryUrl="workDiaryUrl" type="Mobile" />
     </el-drawer>
   </div>
 </template>
 
 <script>
+import MenuCommon from './MenuCommon.vue'
 export default {
+  components: {
+    MenuCommon
+  },
   props: {
     activeIndex: String,
     workDiaryUrl: String,
