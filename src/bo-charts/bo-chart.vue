@@ -8,18 +8,6 @@ import * as echarts from 'echarts'
 
 export default {
   name: "bo-chart",
-  props: {
-    radar: Object,
-    title: Object,
-    tooltip: Object,
-    xAxis: Object,
-    yAxis: [Array, Object],
-    series: Array,
-    legend: Object,
-    dataZoom: Array,
-    grid: Object,
-    color: Array
-  },
   data() {
     return {
       chart: null,
@@ -28,6 +16,11 @@ export default {
           this.chart && this.chart.resize();
         })
       }
+    }
+  },
+  computed: {
+    series() {
+      return this.$attrs.series
     }
   },
   watch: {
@@ -71,16 +64,7 @@ export default {
         this.chart.clear();
         return;
       }
-      this.chart.setOption(this.getOption());
-    },
-    getOption() {
-      const option = {};
-      for (const key in this._props) {
-        if (Object.hasOwnProperty.call(this._props, key) && !!this._props[key]) {
-          option[key] = this._props[key];
-        }
-      }
-      return option;
+      this.chart.setOption(this.$attrs);
     },
   },
 };
