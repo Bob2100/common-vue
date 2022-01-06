@@ -1,5 +1,7 @@
 <template>
-  <div>use base</div>
+  <div>
+    <BaseSearchBox />
+  </div>
 </template>
 
 <script>
