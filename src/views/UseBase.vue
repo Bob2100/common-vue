@@ -1,9 +1,6 @@
 <template>
   <div>
-    <BaseSearchBox
-      v-model="keyWord"
-      v-bind="{ placeholder: '请输入关键字', clearable: true }"
-      @search="doSearch" />
+    <BaseSearchBox v-model="keyWord" v-bind="option" @search="doSearch" />
   </div>
 </template>
 
@@ -13,6 +10,11 @@ export default {
     return {
       keyWord: '',
     }
+  },
+  computed: {
+    option() {
+      return { placeholder: '请输入关键字', clearable: true }
+    },
   },
   methods: {
     doSearch() {
