@@ -8,42 +8,47 @@ const routes = [
   {
     path: '/',
     name: 'Layout',
-    redirect: "/index",
+    redirect: '/index',
     component: Layout,
     children: [
       {
-        path: "index",
-        name: "index",
-        component: () => import('../views/index/IndexPage.vue')
+        path: 'index',
+        name: 'index',
+        component: () => import('../views/index/IndexPage.vue'),
       },
       {
-        path: "GitTeach",
-        name: "GitTeach",
-        component: () => import('../views/gitTeach')
+        path: 'GitTeach',
+        name: 'GitTeach',
+        component: () => import('../views/gitTeach'),
       },
       {
-        path: "BoChartsDemo",
-        name: "BoChartsDemo",
-        component: () => import('../views/BoChartsDemo')
+        path: 'BoChartsDemo',
+        name: 'BoChartsDemo',
+        component: () => import('../views/BoChartsDemo'),
       },
-    ]
+      {
+        path: 'UseBase',
+        name: 'UseBase',
+        component: () => import('../views/UseBase.vue'),
+      },
+    ],
   },
   {
     path: '*',
-    redirect: "/index",
-  }
+    redirect: '/index',
+  },
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
 })
 const originalPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(route) {
-  const currentRoute = router.currentRoute;
+  const currentRoute = router.currentRoute
   if (currentRoute.name === route.name) {
-    return;
+    return
   }
-  return originalPush.call(this, route).catch(err => err);
+  return originalPush.call(this, route).catch((err) => err)
 }
 
 export default router
