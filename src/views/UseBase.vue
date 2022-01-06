@@ -3,6 +3,7 @@
     <BaseSearchBox
       v-model="keyWord"
       placeholder="请输入关键字"
+      :clearable="true"
       @search="doSearch" />
   </div>
 </template>

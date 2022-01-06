@@ -3,6 +3,7 @@
     <el-input
       :value="value"
       :placeholder="placeholder"
+      :clearable="clearable"
       @input="$emit('input', $event)" />
     <el-button type="primary" icon="el-icon-search" @click="$emit('search')">
       搜索
@@ -15,6 +16,7 @@ export default {
   props: {
     value: String,
     placeholder: String,
+    clearable: Boolean,
   },
 }
 </script>
