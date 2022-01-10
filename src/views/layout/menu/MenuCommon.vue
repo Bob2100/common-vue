@@ -22,13 +22,13 @@
     <el-submenu class="header-menu-item" index>
       <template slot="title">看文章</template>
       <el-menu-item>
-        <el-link :href="workDiaryUrl">工作日志</el-link>
+        <a :href="workDiaryUrl" target="_blank">工作日志</a>
       </el-menu-item>
     </el-submenu>
     <el-menu-item class="header-menu-item">
-      <el-link href="https://github.com/Bob2100/common-vue/tags">{{
+      <a href="https://github.com/Bob2100/common-vue/tags" target="_blank">{{
         version
-      }}</el-link>
+      }}</a>
     </el-menu-item>
   </el-menu>
 </template>
