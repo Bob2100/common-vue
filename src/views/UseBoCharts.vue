@@ -1,5 +1,9 @@
 <template>
   <div class="UseBoCharts">
+    <p>
+      BoCharts 是针对 echarts 的 Vue 2 组件化封装，目的是帮助开发者在 Vue 2
+      中更友好的使用 echarts。
+    </p>
     <h2>NPM 安装 BoCharts</h2>
     <p>你可以使用如下命令通过 npm 安装 BoCharts</p>
     <div class="code-wrapper">
@@ -27,7 +31,7 @@
       <pre
         class="language-text"><code><span class="token punctuation-tag">&lt;</span><span class="token tag">bo-chart</span> v-bind<span class="token punctuation">="</span>option<span class="token punctuation">"</span> <span class="token punctuation-tag">/&gt;</span></code></pre>
     </div>
-    <h2>展示效果</h2>
+    <h2>显示效果</h2>
     <bo-chart v-bind="option" />
   </div>
 </template>
