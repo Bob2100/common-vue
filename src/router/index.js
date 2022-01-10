@@ -24,7 +24,7 @@ const routes = [
       {
         path: 'BoChartsDemo',
         name: 'BoChartsDemo',
-        component: () => import('../views/BoChartsDemo'),
+        component: () => import('../views/UseBoCharts.vue'),
       },
       {
         path: 'UseBase',

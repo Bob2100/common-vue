@@ -14,14 +14,14 @@ export default {
         title: {
           text: 'Referer of a Website',
           subtext: 'Fake Data',
-          left: 'center'
+          left: 'center',
         },
         tooltip: {
-          trigger: 'item'
+          trigger: 'item',
         },
         legend: {
           orient: 'vertical',
-          left: 'left'
+          left: 'left',
         },
         series: [
           {
@@ -33,43 +33,43 @@ export default {
               { value: 735, name: 'Direct' },
               { value: 580, name: 'Email' },
               { value: 484, name: 'Union Ads' },
-              { value: 300, name: 'Video Ads' }
+              { value: 300, name: 'Video Ads' },
             ],
             emphasis: {
               itemStyle: {
                 shadowBlur: 10,
                 shadowOffsetX: 0,
-                shadowColor: 'rgba(0, 0, 0, 0.5)'
-              }
-            }
-          }
-        ]
-      };
+                shadowColor: 'rgba(0, 0, 0, 0.5)',
+              },
+            },
+          },
+        ],
+      }
     },
     lineOption() {
       return {
         xAxis: {
           type: 'category',
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         },
         yAxis: {
-          type: 'value'
+          type: 'value',
         },
         series: [
           {
             data: [150, 230, 224, 218, 135, 147, 260],
-            type: 'line'
-          }
-        ]
-      };
+            type: 'line',
+          },
+        ],
+      }
     },
     radarOption() {
       return {
         title: {
-          text: 'Basic Radar Chart'
+          text: 'Basic Radar Chart',
         },
         legend: {
-          data: ['Allocated Budget', 'Actual Spending']
+          data: ['Allocated Budget', 'Actual Spending'],
         },
         radar: {
           // shape: 'circle',
@@ -79,8 +79,8 @@ export default {
             { name: 'Information Technology', max: 30000 },
             { name: 'Customer Support', max: 38000 },
             { name: 'Development', max: 52000 },
-            { name: 'Marketing', max: 25000 }
-          ]
+            { name: 'Marketing', max: 25000 },
+          ],
         },
         series: [
           {
@@ -89,20 +89,19 @@ export default {
             data: [
               {
                 value: [4200, 3000, 20000, 35000, 50000, 18000],
-                name: 'Allocated Budget'
+                name: 'Allocated Budget',
               },
               {
                 value: [5000, 14000, 28000, 26000, 42000, 21000],
-                name: 'Actual Spending'
-              }
-            ]
-          }
-        ]
-      };
-    }
-  }
+                name: 'Actual Spending',
+              },
+            ],
+          },
+        ],
+      }
+    },
+  },
 }
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
