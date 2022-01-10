@@ -26,36 +26,24 @@ Vue.use(BoCharts)</code></pre>
         class="language-text"><code>&lt;bo-chart v-bind="option" /&gt;</code></pre>
     </div>
     <h2>展示效果</h2>
-    <bo-chart v-bind="lineOption" />
+    <bo-chart v-bind="option" />
   </div>
 </template>
 
 <script>
 export default {
   computed: {
-    lineOption() {
+    option() {
       return {
-        title: {
-          text: '营业收入折线图',
-        },
-        legend: {
-          data: ['营业收入'],
-        },
-        tooltip: {
-          trigger: 'axis',
-        },
         xAxis: {
-          name: '年',
           type: 'category',
-          data: ['2015', '2016', '2017', '2018', '2019', '2020', '2021'],
+          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         },
         yAxis: {
           type: 'value',
-          name: '亿元',
         },
         series: [
           {
-            name: '营业收入',
             data: [150, 230, 224, 218, 135, 147, 260],
             type: 'line',
           },
