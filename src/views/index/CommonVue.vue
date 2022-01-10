@@ -12,7 +12,7 @@
     </p>
     <p>
       <a href="https://github.com/Bob2100/common-vue" target="_blank"
-        >点击这里查看本站源码</a
+        >本站源码</a
       >
     </p>
   </div>
