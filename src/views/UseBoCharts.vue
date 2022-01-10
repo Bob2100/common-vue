@@ -1,5 +1,10 @@
 <template>
   <div class="UseBoCharts">
+    <h2>NPM 安装 BoCharts</h2>
+    <p>你可以使用如下命令通过 npm 安装 BoCharts</p>
+    <pre class="language-text">
+    <code>npm i -S bo-charts</code>
+    </pre>
     <bo-chart v-bind="lineOption" />
   </div>
 </template>
@@ -40,4 +45,16 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+h2 {
+  border-bottom: 1px solid #eee;
+}
+pre {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+pre[class*='language-'] {
+  color: #c3cee3;
+  background: #263238;
+}
+</style>
