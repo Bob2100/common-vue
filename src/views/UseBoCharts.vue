@@ -8,8 +8,10 @@
     <h2>在Vue2中注册 BoCharts</h2>
     <p>你可以使用如下命令将 BoCharts 注册到 Vue</p>
     <div class="code-wrapper">
-      <pre class="language-text"><code>import BoCharts from 'bo-charts' 
-Vue.use(BoCharts)</code></pre>
+      <pre
+        class="language-text"><code><span class="token keyword">import</span> BoCharts <span class="token keyword">from</span> <span class="token string">'bo-charts'</span> 
+
+<span class="token object">Vue</span><span>.</span><span class="token function">use</span><span class="token punctuation">(</span>BoCharts<span class="token punctuation">)</span></code></pre>
     </div>
     <h2>使用示例</h2>
     <p>
@@ -23,7 +25,7 @@ Vue.use(BoCharts)</code></pre>
     </p>
     <div class="code-wrapper">
       <pre
-        class="language-text"><code>&lt;bo-chart v-bind="option" /&gt;</code></pre>
+        class="language-text"><code><span class="token punctuation-tag">&lt;</span><span class="token tag">bo-chart</span> v-bind<span class="token punctuation">="</span>option<span class="token punctuation">"</span> <span class="token punctuation-tag">/&gt;</span></code></pre>
     </div>
     <h2>展示效果</h2>
     <bo-chart v-bind="option" />
@@ -61,11 +63,32 @@ h2 {
 .code-wrapper {
   width: 50%;
 }
+.token.keyword {
+  color: #c586c0;
+}
+.token.string {
+  color: #ce9178;
+}
+.token.object {
+  color: #4ec9b0;
+}
+.token.function {
+  color: #dcdcaa;
+}
+.token.punctuation {
+  color: #d4d4d4;
+}
+.token.punctuation-tag {
+  color: #808080;
+}
+.token.tag {
+  color: #569cd6;
+}
 pre[class*='language-'] {
   border: 1px solid #ccc;
   border-radius: 4px;
-  color: #c3cee3;
-  background: #263238;
+  color: #9cdcfe;
+  background: #1e1e1e;
   padding: 14px;
 }
 </style>
