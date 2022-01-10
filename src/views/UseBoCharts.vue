@@ -2,9 +2,9 @@
   <div class="UseBoCharts">
     <h2>NPM 安装 BoCharts</h2>
     <p>你可以使用如下命令通过 npm 安装 BoCharts</p>
-    <pre class="language-text">
-    <code>npm i -S bo-charts</code>
-    </pre>
+    <div class="code-wrapper">
+      <pre class="language-text"><code>npm i -S bo-charts</code></pre>
+    </div>
     <bo-chart v-bind="lineOption" />
   </div>
 </template>
@@ -49,12 +49,14 @@ export default {
 h2 {
   border-bottom: 1px solid #eee;
 }
-pre {
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.code-wrapper {
+  width: 50%;
 }
 pre[class*='language-'] {
+  border: 1px solid #ccc;
+  border-radius: 4px;
   color: #c3cee3;
   background: #263238;
+  padding: 14px;
 }
 </style>
