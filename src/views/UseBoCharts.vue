@@ -11,7 +11,7 @@
       <pre
         class="language-text"><code><span class="token keyword">import</span> BoCharts <span class="token keyword">from</span> <span class="token string">'bo-charts'</span> 
 
-<span class="token object">Vue</span><span>.</span><span class="token function">use</span><span class="token punctuation">(</span>BoCharts<span class="token punctuation">)</span></code></pre>
+<span class="token object">Vue</span><span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>BoCharts<span class="token punctuation">)</span></code></pre>
     </div>
     <h2>使用示例</h2>
     <p>
