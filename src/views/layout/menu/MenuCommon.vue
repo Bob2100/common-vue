@@ -19,12 +19,6 @@
     <el-menu-item index="/GitTeach" class="header-menu-item">
       Git常用命令
     </el-menu-item>
-    <el-submenu class="header-menu-item" index>
-      <template slot="title">看文章</template>
-      <el-menu-item>
-        <a :href="workDiaryUrl" target="_blank">工作日志</a>
-      </el-menu-item>
-    </el-submenu>
   </el-menu>
 </template>
 
