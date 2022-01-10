@@ -5,7 +5,7 @@
     <div class="code-wrapper">
       <pre class="language-text"><code>npm i -S bo-charts</code></pre>
     </div>
-    <h2>在Vue2中注册 BoCharts</h2>
+    <h2>在 Vue2 中注册 BoCharts</h2>
     <p>你可以使用如下命令将 BoCharts 注册到 Vue</p>
     <div class="code-wrapper">
       <pre
