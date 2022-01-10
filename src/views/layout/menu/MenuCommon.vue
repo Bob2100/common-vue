@@ -25,11 +25,6 @@
         <a :href="workDiaryUrl" target="_blank">工作日志</a>
       </el-menu-item>
     </el-submenu>
-    <el-menu-item class="header-menu-item">
-      <a href="https://github.com/Bob2100/common-vue/tags" target="_blank">{{
-        version
-      }}</a>
-    </el-menu-item>
   </el-menu>
 </template>
 
