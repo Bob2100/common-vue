@@ -8,13 +8,13 @@ const routes = [
   {
     path: '/',
     name: 'Layout',
-    redirect: '/index',
+    redirect: 'CommonVue',
     component: Layout,
     children: [
       {
-        path: 'index',
-        name: 'index',
-        component: () => import('../views/index/IndexPage.vue'),
+        path: 'CommonVue',
+        name: 'CommonVue',
+        component: () => import('../views/index/CommonVue.vue'),
       },
       {
         path: 'GitTeach',
@@ -22,8 +22,8 @@ const routes = [
         component: () => import('../views/gitTeach'),
       },
       {
-        path: 'BoChartsDemo',
-        name: 'BoChartsDemo',
+        path: 'UseBoCharts',
+        name: 'UseBoCharts',
         component: () => import('../views/UseBoCharts.vue'),
       },
       {

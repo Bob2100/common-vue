@@ -1,11 +1,12 @@
 <template>
   <div class="MenuMobile">
     <i class="el-icon-s-fold" @click="isShowDrawer = true"></i>
-    <el-drawer @click.native="isShowDrawer = false" :visible.sync="isShowDrawer"
-      :with-header="false" append-to-body>
-      <MenuCommon class="header-menu" @select="$emit('select', $event)"
-        :activeIndex="activeIndex" :version="version"
-        :workDiaryUrl="workDiaryUrl" type="Mobile" />
+    <el-drawer
+      @click.native="isShowDrawer = false"
+      :visible.sync="isShowDrawer"
+      :with-header="false"
+      append-to-body>
+      <MenuCommon class="header-menu" type="Mobile" />
     </el-drawer>
   </div>
 </template>
@@ -14,17 +15,17 @@
 import MenuCommon from './MenuCommon.vue'
 export default {
   components: {
-    MenuCommon
+    MenuCommon,
   },
   props: {
     activeIndex: String,
     workDiaryUrl: String,
-    version: String
+    version: String,
   },
   data() {
     return {
-      isShowDrawer: false
-    };
+      isShowDrawer: false,
+    }
   },
 }
 </script>
