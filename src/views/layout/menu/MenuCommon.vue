@@ -54,8 +54,5 @@ export default {
       return `v${process.env.VUE_APP_VERSION}`
     },
   },
-  created() {
-    console.log(this.$route.path)
-  },
 }
 </script>
