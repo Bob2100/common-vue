@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="UseBase">
     <BaseSearchBox v-model="keyWord" v-bind="option" @search="doSearch" />
   </div>
 </template>
