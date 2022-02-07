@@ -1,12 +1,16 @@
-<template>
-  <div class="bo-code">
-    <pre><code><slot></slot></code></pre>
-  </div>
-</template>
-
 <script>
 export default {
   name: 'bo-code',
+  render() {
+    console.log(this.$slots)
+    return (
+      <div class="bo-code">
+        <pre>
+          <code>{this.$slots.default}</code>
+        </pre>
+      </div>
+    )
+  },
 }
 </script>
 
