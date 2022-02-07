@@ -1,5 +1,5 @@
 <template>
-  <div class="UseBoCharts">
+  <div class="QuickStart">
     <p>
       BoCharts 是针对 echarts 的 Vue 2 组件化封装，目的是帮助开发者在 Vue 2
       中更友好的使用 echarts。
