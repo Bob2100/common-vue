@@ -6,12 +6,12 @@
     </p>
     <h2>NPM 安装 BoCharts</h2>
     <p>你可以使用如下命令通过 npm 安装 BoCharts</p>
-    <div class="code-wrapper">
+    <div>
       <pre class="language-text"><code>npm i -S bo-charts</code></pre>
     </div>
     <h2>在 Vue2 中注册 BoCharts</h2>
     <p>你可以使用如下命令将 BoCharts 注册到 Vue</p>
-    <div class="code-wrapper">
+    <div>
       <pre
         class="language-text"><code><span class="token keyword">import</span> BoCharts <span class="token keyword">from</span> <span class="token string">'bo-charts'</span> 
 
@@ -27,7 +27,7 @@
       >
       官方文档保持一致
     </p>
-    <div class="code-wrapper">
+    <div>
       <pre
         class="language-text"><code><span class="token punctuation-tag">&lt;</span><span class="token tag">bo-chart</span> v-bind<span class="token punctuation">="</span>option<span class="token punctuation">"</span> <span class="token punctuation-tag">/&gt;</span></code></pre>
     </div>
@@ -63,9 +63,6 @@ export default {
 <style lang="scss" scoped>
 h2 {
   border-bottom: 1px solid #eee;
-}
-.code-wrapper {
-  width: 50%;
 }
 .token.keyword {
   color: #c586c0;
