@@ -1,9 +1,3 @@
-<template>
-  <div class="UseBase">
-    <BaseSearchBox v-model="keyWord" v-bind="option" @search="doSearch" />
-  </div>
-</template>
-
 <script>
 export default {
   data() {
@@ -20,6 +14,21 @@ export default {
     doSearch() {
       console.log(this.keyWord)
     },
+    input(val) {
+      this.keyWord = val
+    },
+  },
+  render() {
+    return (
+      <div class="UseBase">
+        <BaseSearchBox
+          value={this.keyWord}
+          onInput={this.input}
+          {...{ attrs: this.option }}
+          onSearch={this.doSearch}
+        />
+      </div>
+    )
   },
 }
 </script>
