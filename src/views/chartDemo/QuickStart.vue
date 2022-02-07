@@ -6,9 +6,12 @@
     </p>
     <h2>NPM 安装 BoCharts</h2>
     <p>你可以使用如下命令通过 npm 安装 BoCharts</p>
-    <bo-code class="lang-text">npm i -S bo-charts</bo-code>
+    <bo-code lang="text">npm i -S bo-charts</bo-code>
     <h2>在 Vue2 中注册 BoCharts</h2>
     <p>你可以使用如下命令将 BoCharts 注册到 Vue</p>
+    <bo-code lang="js">
+      import BoCharts from 'bo-charts' Vue.use(BoCharts)
+    </bo-code>
     <div>
       <pre
         class="language-text"><code><span class="token keyword">import</span> BoCharts <span class="token keyword">from</span> <span class="token string">'bo-charts'</span> 
