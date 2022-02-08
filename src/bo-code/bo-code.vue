@@ -16,7 +16,10 @@ export default {
     formatStrategies() {
       return {
         js: (text) => {
-          return this.format(text).replaceString().replaceKeywords()
+          return this.format(text)
+            .replaceString()
+            .replaceMethodInvoke()
+            .replaceKeywords()
         },
         text(text) {
           return text
@@ -45,6 +48,19 @@ export default {
         text: text.replace(
           /"[\d\D]+"/g,
           (match) => `<span class="string">${match}</span>`
+        ),
+        replaceMethodInvoke() {
+          return vm.replaceMethodInvoke(this.text)
+        },
+      }
+    },
+    replaceMethodInvoke(text) {
+      const vm = this
+      return {
+        text: text.replace(
+          /(\w+)\.(\w+)/g,
+          (match, p1, p2) =>
+            `<span class="object">${p1}</span>.<span class="function">${p2}</span>`
         ),
         replaceKeywords() {
           return vm.replaceKeywords(this.text)
@@ -90,5 +106,11 @@ pre {
 }
 .string {
   color: #ce9178;
+}
+.object {
+  color: #4ec9b0;
+}
+.function {
+  color: #dcdcaa;
 }
 </style>

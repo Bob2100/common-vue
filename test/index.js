@@ -1,2 +1,2 @@
-const prettier = require('prettier')
-console.log(prettier.format('foo ( );', { semi: false, parser: 'babel' }))
+const str = 'const str = "Vue.use()"; Vue.use()'
+str.replace(/([\w|\$]+)\.([\w|\$]+)/g, (match, p1, p2) => '')
