@@ -15,7 +15,7 @@ export default {
     },
     formatStrategies() {
       return {
-        js(text) {
+        js: (text) => {
           return this.format(text).replaceString().replaceKeywords()
         },
         text(text) {
@@ -52,7 +52,8 @@ export default {
       }
     },
     replaceKeywords(text) {
-      ;['import', 'from'].forEach((item) => {
+      const keywords = ['import', 'from']
+      keywords.forEach((item) => {
         text = text.replace(
           new RegExp(`${item} `, 'g'),
           `<span class="keyword">${item} </span>`
