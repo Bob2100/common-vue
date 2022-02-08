@@ -1,7 +1,6 @@
 <script>
 import prettier from 'prettier/standalone'
 import babel from 'prettier/parser-babel'
-import { keywords } from './config'
 export default {
   name: 'bo-code',
   props: {
@@ -12,25 +11,45 @@ export default {
   },
   methods: {
     format(text) {
-      return (
-        text &&
-        prettier.format(text, {
-          parser: 'babel',
-          plugins: [babel],
-        })
-      )
+      const vm = this
+      return {
+        text:
+          text &&
+          prettier.format(text, {
+            parser: 'babel',
+            plugins: [babel],
+          }),
+        replaceString() {
+          return vm.replaceString(this.text)
+        },
+      }
     },
-  },
-  render() {
-    let text = this.$slots.default[0].text
-    if (this.lang === 'js') {
-      text = this.format(text)
-      keywords.forEach((item) => {
+    replaceString(text) {
+      const vm = this
+      return {
+        text: text.replace(
+          /"[\d\D]+"/g,
+          (match) => `<span class="string">${match}</span>`
+        ),
+        replaceKeywords() {
+          return vm.replaceKeywords(this.text)
+        },
+      }
+    },
+    replaceKeywords(text) {
+      ;['import', 'from'].forEach((item) => {
         text = text.replace(
           new RegExp(`${item} `, 'g'),
           `<span class="keyword">${item} </span>`
         )
       })
+      return text
+    },
+  },
+  render() {
+    let text = this.$slots.default[0].text
+    if (this.lang === 'js') {
+      text = this.format(text).replaceString().replaceKeywords()
     }
     return (
       <div class="bo-code">
@@ -53,5 +72,8 @@ pre {
 }
 .keyword {
   color: #c586c0;
+}
+.string {
+  color: #ce9178;
 }
 </style>
