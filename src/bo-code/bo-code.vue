@@ -9,6 +9,21 @@ export default {
       default: 'text',
     },
   },
+  computed: {
+    text() {
+      return this.$slots.default[0].text
+    },
+    formatStrategies() {
+      return {
+        js(text) {
+          return this.format(text).replaceString().replaceKeywords()
+        },
+        text(text) {
+          return text
+        },
+      }
+    },
+  },
   methods: {
     format(text) {
       const vm = this
@@ -47,14 +62,13 @@ export default {
     },
   },
   render() {
-    let text = this.$slots.default[0].text
-    if (this.lang === 'js') {
-      text = this.format(text).replaceString().replaceKeywords()
-    }
     return (
       <div class="bo-code">
         <pre>
-          <code domPropsInnerHTML={text}></code>
+          <code
+            domPropsInnerHTML={this.formatStrategies[this.lang](
+              this.text
+            )}></code>
         </pre>
       </div>
     )
