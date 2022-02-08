@@ -10,7 +10,7 @@
     <h2>在 Vue2 中注册 BoCharts</h2>
     <p>你可以使用如下命令将 BoCharts 注册到 Vue</p>
     <bo-code lang="js">
-      import BoCharts from 'bo-charts' Vue.use(BoCharts)
+      import BoCharts from 'bo-charts'; Vue.use(BoCharts)
     </bo-code>
     <div>
       <pre

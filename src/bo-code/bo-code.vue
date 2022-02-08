@@ -1,5 +1,6 @@
 <script>
-import prettier from 'prettier'
+import prettier from 'prettier/standalone'
+import babel from 'prettier/parser-babel'
 import { keywords } from './config'
 export default {
   name: 'bo-code',
@@ -14,10 +15,8 @@ export default {
       return (
         text &&
         prettier.format(text, {
-          singleQuote: true,
-          semi: false,
-          bracketSameLine: true,
           parser: 'babel',
+          plugins: [babel],
         })
       )
     },
@@ -25,12 +24,11 @@ export default {
   render() {
     let text = this.$slots.default[0].text
     if (this.lang === 'js') {
-      console.log(text)
       text = this.format(text)
       keywords.forEach((item) => {
         text = text.replace(
-          new RegExp(` ${item} `, 'g'),
-          `<span class="keyword"> ${item} </span>`
+          new RegExp(`${item} `, 'g'),
+          `<span class="keyword">${item} </span>`
         )
       })
     }

@@ -1,2 +1,2 @@
-
-console.log(0 == false);
+const prettier = require('prettier')
+console.log(prettier.format('foo ( );', { semi: false, parser: 'babel' }))
