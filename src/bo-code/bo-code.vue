@@ -1,6 +1,5 @@
 <script>
-import prettier from 'prettier/standalone'
-import babel from 'prettier/parser-babel'
+import { JsString } from './config'
 export default {
   name: 'bo-code',
   props: {
@@ -15,77 +14,25 @@ export default {
     },
     formatStrategies() {
       return {
-        js: (text) => {
-          return this.format(text)
+        js: () => {
+          return new JsString(this.text)
+            .format()
             .replaceString()
             .replaceMethodInvoke()
             .replaceKeywords()
+            .toString()
         },
-        text(text) {
-          return text
-        },
-      }
-    },
-  },
-  methods: {
-    format(text) {
-      const vm = this
-      return {
-        text:
-          text &&
-          prettier.format(text, {
-            parser: 'babel',
-            plugins: [babel],
-          }),
-        replaceString() {
-          return vm.replaceString(this.text)
+        text: () => {
+          return this.text
         },
       }
-    },
-    replaceString(text) {
-      const vm = this
-      return {
-        text: text.replace(
-          /"[\d\D]+"/g,
-          (match) => `<span class="string">${match}</span>`
-        ),
-        replaceMethodInvoke() {
-          return vm.replaceMethodInvoke(this.text)
-        },
-      }
-    },
-    replaceMethodInvoke(text) {
-      const vm = this
-      return {
-        text: text.replace(
-          /(\w+)\.(\w+)/g,
-          (match, p1, p2) =>
-            `<span class="object">${p1}</span>.<span class="function">${p2}</span>`
-        ),
-        replaceKeywords() {
-          return vm.replaceKeywords(this.text)
-        },
-      }
-    },
-    replaceKeywords(text) {
-      const keywords = ['import', 'from']
-      keywords.forEach((item) => {
-        text = text.replace(
-          new RegExp(`${item} `, 'g'),
-          `<span class="keyword">${item} </span>`
-        )
-      })
-      return text
     },
   },
   render() {
     return (
       <div class="bo-code">
         <pre>
-          <code
-            domPropsInnerHTML={this.formatStrategies[this.lang](
-              this.text
-            )}></code>
+          <code domPropsInnerHTML={this.formatStrategies[this.lang]()}></code>
         </pre>
       </div>
     )
