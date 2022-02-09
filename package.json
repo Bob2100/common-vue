@@ -10,11 +10,13 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@highlightjs/vue-plugin": "^1.0.2",
     "axios": "^0.21.1",
     "bo-charts": "^2.1.0",
     "bo-code": "^0.0.1",
     "core-js": "^3.6.5",
     "element-ui": "^2.15.3",
+    "highlight.js": "^11.4.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuex": "^3.0.1",
